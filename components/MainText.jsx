@@ -9,7 +9,7 @@ const rowdies = Rowdies({
 
 export default function MainText() {
   return (
-    <div className={`${rowdies.className} text-3xl md:text-4xl font-bold flex flex-col gap-4 items-center`}>
+    <div className={`${rowdies.className} text-3xl md:text-4xl lg:text-6xl font-bold flex flex-col gap-4 items-center`}>
       <h1 className="text-center">Hello, My name is Rainier</h1>
       <div>
         <Typewriter

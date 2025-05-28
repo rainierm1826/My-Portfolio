@@ -15,16 +15,13 @@ export default function Home() {
     <div className="">
       {/* main */}
       <div
-        className="h-[calc(100vh-60px)] grid grid-cols-1 md:grid-cols-2"
+        className="h-[calc(100vh-60px)] grid place-items-center"
         id="home"
       >
         {/* text */}
         <div className="flex items-center justify-center h-full">
           <MainText />
         </div>
-
-        {/* image */}
-        <div></div>
       </div>
 
       {/* skills */}

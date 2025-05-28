@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { NavLinks } from "@/lib/types";
-import { DarkModeToggle } from "@/components/DarkModeToggle";
 import { Social } from "./SocialLinks";
 import Logo from "./Logo";
 import Sidebar from "./Sidebar";
@@ -24,14 +23,13 @@ export function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-black">
       <div className="container mx-auto h-[60px] px-4 flex justify-between items-center">
         <Logo />
-        <div className="hidden md:flex items-center gap-10">
+        <div className="hidden lg:flex items-center gap-10">
           <Nav />
-          <DarkModeToggle />
         </div>
-        <div className="hidden md:flex">
+        <div className="hidden lg:flex">
           <Social />
         </div>
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <Sidebar />
         </div>
       </div>
