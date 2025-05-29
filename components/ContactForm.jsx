@@ -14,7 +14,9 @@ export default function ContactForm() {
     message: "",
   });
 
-  const handleSubmit = (e) => {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (
@@ -25,13 +27,26 @@ export default function ContactForm() {
       toast.error("Please fill in all fields");
       return;
     }
+
+    try {
+      setIsLoading(true);
+      const response = await fetch("/api/send-gmail", {
+        method: "POST",
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+      toast.success(result.message);
+      setIsLoading(false);
+    } catch (error) {
+      toast.error("Error sending email");
+      setIsLoading(false);
+    }
     setFormData({
       email: "",
       subject: "",
       message: "",
     });
-
-    toast.success("Message sent successfully");
   };
 
   return (
@@ -75,8 +90,12 @@ export default function ContactForm() {
             }
           />
         </div>
-        <Button type="submit" className="w-full">
-          Send
+        <Button
+          type="submit"
+          disabled={isLoading}
+          className={`w-full ${isLoading ? "cursor-not-allowed" : ""}`}
+        >
+          {isLoading ? "Sending..." : "Send"}
         </Button>
       </form>
     </div>
