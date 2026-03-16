@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { Poppins } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
 import { DarkModeToggle } from "@/components/DarkModeToggle";
+import { icons } from "lucide-react";
 
 const poppins = Poppins({
   weight: ["400", "500", "600", "700"],
@@ -13,6 +14,9 @@ const poppins = Poppins({
 export const metadata = {
   title: "My Portfolio",
   description: "This is my portfolio",
+  icons: {
+    icon: "/profile.png",
+  },
 };
 
 export default function RootLayout({ children }) {

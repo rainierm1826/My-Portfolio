@@ -52,7 +52,7 @@ export default function ContactForm() {
   return (
     <div className="w-full max-w-md mx-auto">
       <form className="space-y-5" onSubmit={handleSubmit}>
-        <div className="grid grid-cols-2 gap-5">
+        <div className="grid md:grid-cols-2 gap-5">
           <div className="space-y-1">
             <Label htmlFor="email">Email</Label>
             <Input
